@@ -1,7 +1,8 @@
 -- liquibase formatted sql
 
 --changeset aelchikushuulu:1
-SELECT * FROM students WHERE name=''
+CREATE INDEX idx_students_name ON students (name);
+
 
 --changeset aelchikushuulu:2
-SELECT * FROM faculties WHERE color = '' AND name = ''
+CREATE UNIQUE INDEX idx_faculties_name_color ON faculties (name, color);
